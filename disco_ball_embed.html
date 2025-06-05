@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .disco-wrapper {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .disco-ball {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(#ccc, #999);
+      border-radius: 50%;
+      box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.3), inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+      animation: spin 4s linear infinite;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .lights span {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    .lights span:nth-child(1) { top: 20px; left: 30px; animation-delay: 0s; }
+    .lights span:nth-child(2) { top: 50px; left: 150px; animation-delay: 0.3s; }
+    .lights span:nth-child(3) { top: 130px; left: 80px; animation-delay: 0.6s; }
+    .lights span:nth-child(4) { top: 100px; left: 20px; animation-delay: 0.9s; }
+    .lights span:nth-child(5) { top: 150px; left: 150px; animation-delay: 1.2s; }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="disco-wrapper">
+    <div class="disco-ball"></div>
+    <div class="lights">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</body>
+</html>
